@@ -34,7 +34,7 @@ export const StyledTimerBtn = styled.button`
   font: inherit;
   font-size: 2rem;
   font-weight: 700;
-  color: #eff1fa;
+  color: ${(props) => (props.coloredText ? props.theme.color : "#eff1fa")};
   background-color: transparent;
   text-transform: uppercase;
   letter-spacing: 10px;

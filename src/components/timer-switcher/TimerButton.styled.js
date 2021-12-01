@@ -5,6 +5,7 @@ const StyledTimerButton = styled.button`
   border: none;
   font: inherit;
   font-size: 1.3rem;
+  font-weight: 700;
   flex: 1 1 0;
   padding: 1.5rem 1rem;
   border-radius: 100rem;

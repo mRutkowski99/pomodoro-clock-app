@@ -24,9 +24,7 @@ const Timer = () => {
     resetTimer,
   } = useTimer(initialTime);
 
-  useEffect(() => {
-    resetTimer();
-  }, [initialTime]);
+  useEffect(resetTimer, [initialTime]);
 
   let btnText = "start";
   if (isRunning) btnText = "pause";
@@ -44,7 +42,7 @@ const Timer = () => {
         value={progressbarValue}
         strokeWidth={4}
         styles={buildStyles({
-          pathTransitionDuration: 0.5,
+          pathTransitionDuration: 1,
           pathColor: colorTheme,
           trailColor: "transparent",
         })}
@@ -54,7 +52,9 @@ const Timer = () => {
         <StyledTimeout>
           {minutes}:{seconds}
         </StyledTimeout>
-        <StyledTimerBtn onClick={toggleTimerHandler}>{btnText}</StyledTimerBtn>
+        <StyledTimerBtn coloredText={isRunning} onClick={toggleTimerHandler}>
+          {btnText}
+        </StyledTimerBtn>
       </Center>
     </StyledTimer>
   );

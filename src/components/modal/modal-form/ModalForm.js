@@ -3,19 +3,9 @@ import InputTime from "./input-time/InputTime";
 import InputFont from "./input-font/InputFont";
 import InputColor from "./input-color/InputColor";
 import { useReducer } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { themeActions } from "../../../store/themeSlice";
 import { timerActions } from "../../../store/timerSlice";
-
-const initialFormState = {
-  time: {
-    pomodoro: 25,
-    shortBreak: 5,
-    longBreak: 10,
-  },
-  font: "Kumbh Sans",
-  color: "#F87070",
-};
 
 const formReducer = (state, action) => {
   if (action.type === "TIME") {
@@ -44,6 +34,22 @@ const formReducer = (state, action) => {
 
 const ModalForm = () => {
   const dispatch = useDispatch();
+  const { font, color } = useSelector((state) => state.theme);
+  const { pomodoro, shortBreak, longBreak } = useSelector(
+    (state) => state.timer
+  );
+
+  //Initial state needs to be created every time from global state to remain values set previously after closing and opening modal
+  const initialFormState = {
+    time: {
+      pomodoro: pomodoro / 60,
+      shortBreak: shortBreak / 60,
+      longBreak: longBreak / 60,
+    },
+    font: font,
+    color: color,
+  };
+
   const [formState, FormDispatch] = useReducer(formReducer, initialFormState);
 
   const changeInputHandler = (data) => {
@@ -61,7 +67,7 @@ const ModalForm = () => {
 
   return (
     <StyledForm onSubmit={submitHandler}>
-      <InputTime onChange={changeInputHandler} />
+      <InputTime onChange={changeInputHandler} value={formState.time} />
       <InputFont onChange={changeInputHandler} value={formState.font} />
       <InputColor onChange={changeInputHandler} value={formState.color} />
       <StyledSubmitButton type="submit">Apply</StyledSubmitButton>
