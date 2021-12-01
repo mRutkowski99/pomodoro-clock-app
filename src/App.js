@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import GlobalStyle from "./globalStyle";
+import HeaderLogo from "./components/header-logo/HeaderLogo";
+import ThemeSwitcher from "./components/theme-switcher/ThemeSwitcher";
+import Timer from "./components/timer/Timer";
+import IconSetting from "./components/IconSettings";
+import Overlay from "./components/modal/Modal";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <Overlay />
+      <HeaderLogo />
+      <ThemeSwitcher />
+      <Timer />
+      <IconSetting />
+    </>
   );
 }
 
