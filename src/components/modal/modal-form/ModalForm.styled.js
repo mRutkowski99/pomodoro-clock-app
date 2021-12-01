@@ -21,7 +21,7 @@ export const StyledSubmitButton = styled.button`
   font-weight: 700;
   font-size: 1.8rem;
   color: #fff;
-  background-color: #f87070;
+  background-color: ${(props) => props.theme.color};
   display: inline-block;
   padding: 1rem 3rem;
   border-radius: 100rem;

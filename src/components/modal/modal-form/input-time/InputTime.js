@@ -12,21 +12,21 @@ const timeReducer = (state, action) => {
   if (action.type === "pomodoro") {
     return {
       ...state,
-      pomodoro: action.payload,
+      pomodoro: action.payload * 60,
     };
   }
 
   if (action.type === "short break") {
     return {
       ...state,
-      shortBreak: action.payload,
+      shortBreak: action.payload * 60,
     };
   }
 
   if (action.type === "long break") {
     return {
       ...state,
-      longBreak: action.payload,
+      longBreak: action.payload * 60,
     };
   }
 

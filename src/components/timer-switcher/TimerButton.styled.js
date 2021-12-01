@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledThemeButton = styled.button`
+const StyledTimerButton = styled.button`
   outline: none;
   border: none;
   font: inherit;
@@ -15,4 +15,4 @@ const StyledThemeButton = styled.button`
   transition: all 0.2s;
 `;
 
-export default StyledThemeButton;
+export default StyledTimerButton;

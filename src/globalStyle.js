@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         font-size: 1.6rem;
-        font-family: 'Kumbh Sans', sans-serif;
+        font-family: ${(props) => props.theme.font};
         font-weight: 500;
         min-height: 100vh;
         background-color: #161932;

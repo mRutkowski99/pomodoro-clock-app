@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledThemeSwitcher = styled.div`
+const StyledTimerSwitcher = styled.div`
   background-color: #161932;
   width: min(100%, 50rem);
   padding: 0.5rem;
@@ -10,4 +10,4 @@ const StyledThemeSwitcher = styled.div`
   z-index: 1;
 `;
 
-export default StyledThemeSwitcher;
+export default StyledTimerSwitcher;

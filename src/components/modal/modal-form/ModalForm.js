@@ -5,6 +5,7 @@ import InputColor from "./input-color/InputColor";
 import { useReducer } from "react";
 import { useDispatch } from "react-redux";
 import { themeActions } from "../../../store/themeSlice";
+import { timerActions } from "../../../store/timerSlice";
 
 const initialFormState = {
   time: {
@@ -53,9 +54,9 @@ const ModalForm = () => {
     event.preventDefault();
 
     const { time, font, color } = formState;
-    console.log(time, font, color);
 
     dispatch(themeActions.setTheme({ font: font, color: color }));
+    dispatch(timerActions.setTimers(time));
   };
 
   return (

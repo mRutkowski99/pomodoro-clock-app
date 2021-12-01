@@ -1,7 +1,7 @@
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./globalStyle";
 import HeaderLogo from "./components/header-logo/HeaderLogo";
-import ThemeSwitcher from "./components/theme-switcher/ThemeSwitcher";
+import TimerSwitcher from "./components/timer-switcher/TimerSwitcher";
 import Timer from "./components/timer/Timer";
 import IconSetting from "./components/IconSettings";
 import Overlay from "./components/modal/Modal";
@@ -22,7 +22,7 @@ function App() {
       <GlobalStyle />
       {showModal && <Overlay />}
       <HeaderLogo />
-      <ThemeSwitcher />
+      <TimerSwitcher />
       <Timer />
       <IconSetting />
     </ThemeProvider>
