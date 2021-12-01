@@ -9,7 +9,8 @@ const StyledThemeButton = styled.button`
   padding: 1.5rem 1rem;
   border-radius: 100rem;
   color: #eff1fa;
-  background-color: ${(props) => (props.active ? "red" : "transparent")};
+  background-color: ${(props) =>
+    props.active ? props.theme.color : "transparent"};
   cursor: pointer;
   transition: all 0.2s;
 `;

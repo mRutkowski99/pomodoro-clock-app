@@ -3,6 +3,8 @@ import InputTime from "./input-time/InputTime";
 import InputFont from "./input-font/InputFont";
 import InputColor from "./input-color/InputColor";
 import { useReducer } from "react";
+import { useDispatch } from "react-redux";
+import { themeActions } from "../../../store/themeSlice";
 
 const initialFormState = {
   time: {
@@ -40,9 +42,8 @@ const formReducer = (state, action) => {
 };
 
 const ModalForm = () => {
-  const [formState, FormDispatch] = useReducer(formReducer, {});
-
-  console.log(formState);
+  const dispatch = useDispatch();
+  const [formState, FormDispatch] = useReducer(formReducer, initialFormState);
 
   const changeInputHandler = (data) => {
     FormDispatch(data);
@@ -50,13 +51,18 @@ const ModalForm = () => {
 
   const submitHandler = (event) => {
     event.preventDefault();
+
+    const { time, font, color } = formState;
+    console.log(time, font, color);
+
+    dispatch(themeActions.setTheme({ font: font, color: color }));
   };
 
   return (
     <StyledForm onSubmit={submitHandler}>
       <InputTime onChange={changeInputHandler} />
-      <InputFont onChange={changeInputHandler} />
-      <InputColor onChange={changeInputHandler} />
+      <InputFont onChange={changeInputHandler} value={formState.font} />
+      <InputColor onChange={changeInputHandler} value={formState.color} />
       <StyledSubmitButton type="submit">Apply</StyledSubmitButton>
     </StyledForm>
   );

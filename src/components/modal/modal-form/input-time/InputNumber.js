@@ -9,14 +9,16 @@ import {
 } from "./InputNumber.styled";
 
 const InputNumber = ({ value, label, onChange }) => {
-  const increaseHandler = () => {
+  const increaseHandler = (event) => {
+    event.preventDefault();
     if (value === 100) return;
 
     const newVal = (value += 5);
     onChange({ type: label, payload: newVal });
   };
 
-  const decreaseHandler = () => {
+  const decreaseHandler = (event) => {
+    event.preventDefault();
     if (value === 5) return;
 
     const newVal = (value -= 5);
@@ -30,10 +32,10 @@ const InputNumber = ({ value, label, onChange }) => {
         <span>{value}</span>
         <Control>
           <ControlButton onClick={increaseHandler}>
-            <img src={arrowUp} />
+            <img src={arrowUp} alt="Icon arrow up inside button" />
           </ControlButton>
           <ControlButton onClick={decreaseHandler}>
-            <img src={arrowDown} />
+            <img src={arrowDown} alt="Icon arrow down inside button" />
           </ControlButton>
         </Control>
       </Input>

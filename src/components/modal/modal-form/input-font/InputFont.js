@@ -1,14 +1,10 @@
-import { useState } from "react";
 import { Input, InputContainer, StyledInputFont } from "./InputFont.styled";
 
 const fonts = ["Kumbh Sans", "Roboto Slab", "Space Mono"];
 
 const InputFont = (props) => {
-  const [activeFont, setActiveFont] = useState(0);
-
   const changeFontHandler = (event) => {
-    setActiveFont(+event.target.id);
-    props.onChange({ type: "FONT", payload: fonts[activeFont] });
+    props.onChange({ type: "FONT", payload: fonts[event.target.id] });
   };
 
   return (
@@ -20,7 +16,7 @@ const InputFont = (props) => {
             key={idx}
             id={idx}
             fontFamily={font}
-            active={idx === activeFont ? true : false}
+            active={font === props.value}
             onClick={changeFontHandler}
           >
             Aa

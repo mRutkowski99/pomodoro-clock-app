@@ -1,14 +1,10 @@
-import { useState } from "react";
 import { Input, InputContainer, StyledInputColor } from "./InputColor.styled";
 
 const colors = ["#F87070", "#70F3F8", "#D881F8"];
 
 const InputColor = (props) => {
-  const [activeColor, setActiveColor] = useState(0);
-
   const changeColorHandler = (event) => {
-    setActiveColor(+event.target.id);
-    props.onChange({ type: "COLOR", payload: colors[activeColor] });
+    props.onChange({ type: "COLOR", payload: colors[event.target.id] });
   };
 
   return (
@@ -20,7 +16,7 @@ const InputColor = (props) => {
             key={idx}
             id={idx}
             bg={color}
-            active={idx === activeColor}
+            active={color === props.value}
             onClick={changeColorHandler}
           />
         ))}
