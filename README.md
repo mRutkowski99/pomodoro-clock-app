@@ -11,7 +11,8 @@ User should be able to:
 - Customize the appearance of the app with the ability to set preferences for colors and fonts
 
 ### Screenshots
-[](https://github.com/mRutkowski99/pomodoro-clock-app/blob/e41db165b5ede91034e55accd86907f594df96f8/public/pomodoro-app-d286e.web.app1.png)
+![](public/pomodoro-app-d286e.web.app1.png)
+![](public/pomodoro-app-d286e.web.app.png)
 
 ### Live view
 Check out [live](https://pomodoro-app-d286e.web.app/)
