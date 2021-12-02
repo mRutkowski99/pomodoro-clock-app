@@ -11,6 +11,7 @@ User should be able to:
 - Customize the appearance of the app with the ability to set preferences for colors and fonts
 
 ### Screenshots
+[](public/FireShot Capture 020 - React App - pomodoro-app-d286e.web.app.png)
 
 ### Live view
 Check out [live](https://pomodoro-app-d286e.web.app/)
@@ -24,8 +25,8 @@ Application build with:
 - Flexbox
 
 ## Author 
-LinkedIn: [Miłosz Rutkowski](www.linkedin.com/in/miłosz-rutkowski-38a52b225)
-e-mail: m.rutkowski0909@gmail.com
+- LinkedIn: [Miłosz Rutkowski](www.linkedin.com/in/miłosz-rutkowski-38a52b225)
+- e-mail: m.rutkowski0909@gmail.com
 
 ## Build app
 
